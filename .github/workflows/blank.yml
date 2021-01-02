@@ -42,6 +42,5 @@ jobs:
       - name: Run Danger
         run: |
           gem install bundler
-          gem 'danger-checkstyle_format'
           gem 'danger-android_lint'
           bundle exec danger
