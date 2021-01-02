@@ -42,5 +42,5 @@ jobs:
       - name: Run Danger
         run: |
           gem install bundler
-          gem 'danger-android_lint'
+          gem install danger-android_lint -v 0.0.6
           bundle exec danger
