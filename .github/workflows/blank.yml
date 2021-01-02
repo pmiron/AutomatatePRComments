@@ -34,3 +34,18 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+
+      - name: Gradle ktlintCheck
+        run: ./gradlew :app:ktlintCheck
+
+      - name: Build and test with Rake
+          run: |
+            gem install bundler
+            gem 'danger-checkstyle_format'
+            gem 'danger-android_lint'
+            bundle exec danger
