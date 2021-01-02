@@ -39,7 +39,6 @@ jobs:
         run: |
           ./gradlew :app:ktlintCheck
           gem install bundler
-           gem 'danger-checkstyle_format'
-           gem 'danger-android_lint'
-           bundle exec danger
-
+          gem 'danger-checkstyle_format'
+          gem 'danger-android_lint'
+          bundle exec danger
