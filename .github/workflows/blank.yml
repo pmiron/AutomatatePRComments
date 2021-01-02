@@ -39,13 +39,12 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6
-
+        run: |
+            gem install bundler
+            gem 'danger-checkstyle_format'
+            gem 'danger-android_lint'
       - name: Gradle ktlintCheck
         run: ./gradlew :app:ktlintCheck
 
       - name: Build and test with Rake
-          run: |
-            gem install bundler
-            gem 'danger-checkstyle_format'
-            gem 'danger-android_lint'
-            bundle exec danger
+          run: bundle exec danger
