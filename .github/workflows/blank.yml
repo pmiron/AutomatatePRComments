@@ -35,9 +35,12 @@ jobs:
         with:
           ruby-version: 2.6
 
-      - name: Run Danger
+      - name: Gradle ktlintCheck
         continue-on-error: true
+        run: ./gradlew :app:ktlintCheck
+
+      - name: Run Danger
         run: |
           gem install bundler
-          ./gradlew runChecksForDanger
+          gem 'danger-android_lint'
           bundle exec danger
